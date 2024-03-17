@@ -12,7 +12,9 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-currentData.innerHTML = `${day} ${hours}:${minutes}`;
+currentData.innerHTML = `${day} ${hours < 10 ? "0" + hours : hours}:${
+  minutes < 10 ? "0" + minutes : minutes
+}`;
 
 document
   .getElementById("search-form")
@@ -37,11 +39,11 @@ function displayWeather(response) {
 
   let humidity = response.data.temperature.humidity;
   let humidityValue = document.querySelector("#humidityValue");
-  humidityValue.innerHTML = humidity;
+  humidityValue.innerHTML = humidity + "%";
 
   let wind = response.data.wind.speed;
   let windValue = document.querySelector("#windValue");
-  windValue.innerHTML = wind;
+  windValue.innerHTML = wind + " km/h";
 
   let city = response.data.city;
   let cityValue = document.querySelector("#cityValue");
