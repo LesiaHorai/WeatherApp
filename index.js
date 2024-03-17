@@ -56,4 +56,17 @@ function displayWeather(response) {
   let iconUrl = response.data.condition.icon_url;
   let iconValue = document.querySelector("#icon_url");
   iconValue.src = iconUrl;
+
+  let weatherCondition = description.toLowerCase();
+  let body = document.querySelector("body");
+
+  if (/clouds/.test(weatherCondition)) {
+    body.style.backgroundImage = "url('images/cloud.jpg')"; // сірий колір для хмарної погоди
+  } else if (/clear/.test(weatherCondition)) {
+    body.style.backgroundImage = "url('images/sun.jpg')"; // блакитний колір для ясної погоди
+  } else if (/rain/.test(weatherCondition)) {
+    body.style.backgroundImage = "url('images/rain.jpg')"; // сірий колір для дощової погоди
+  } else {
+    body.style.backgroundImage = "url('images/background.jpg')"; // стандартний колір фону
+  }
 }
