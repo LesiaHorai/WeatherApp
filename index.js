@@ -61,12 +61,12 @@ function displayWeather(response) {
   let body = document.querySelector("body");
 
   if (/clouds/.test(weatherCondition)) {
-    body.style.backgroundImage = "url('images/cloud.jpg')"; // сірий колір для хмарної погоди
+    body.style.backgroundImage = "url('images/cloud.jpg')";
   } else if (/clear/.test(weatherCondition)) {
-    body.style.backgroundImage = "url('images/sun.jpg')"; // блакитний колір для ясної погоди
+    body.style.backgroundImage = "url('images/sun.jpg')";
   } else if (/rain/.test(weatherCondition)) {
-    body.style.backgroundImage = "url('images/rain.jpg')"; // сірий колір для дощової погоди
+    body.style.backgroundImage = "url('images/rain.jpg')";
   } else {
-    body.style.backgroundImage = "url('images/background.jpg')"; // стандартний колір фону
+    body.style.backgroundImage = "url('images/background.jpg')";
   }
 }
